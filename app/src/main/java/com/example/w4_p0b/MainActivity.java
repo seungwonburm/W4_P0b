@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                         if (yesFlash){
                             openCamera();
                             turnOnFlash();
+
                         }else{
                             Toast.makeText(getApplicationContext(), "No Flashlight Installed on your device", Toast.LENGTH_LONG).show();
                             flashlight.setChecked(false);
@@ -105,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
                             try{
                                 String cameraId = camManager.getCameraIdList()[0];
                                 camManager.setTorchMode(cameraId, true);
+                                Toast.makeText(getApplicationContext(), "ON!", Toast.LENGTH_LONG).show();
                             } catch (CameraAccessException e){
                                 Toast.makeText(getApplicationContext(), "No Flashlight Installed on your device", Toast.LENGTH_LONG).show();
                                 flashlight.setChecked(false);
@@ -128,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
                             try{
                                 String cameraId = camManager.getCameraIdList()[0];
                                 camManager.setTorchMode(cameraId, false);
+                                Toast.makeText(getApplicationContext(), "OFF!", Toast.LENGTH_LONG).show();
                             } catch (CameraAccessException e){
                                 Toast.makeText(getApplicationContext(), "No Flashlight Installed on your device", Toast.LENGTH_LONG).show();
                             }
